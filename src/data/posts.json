@@ -1,0 +1,22 @@
+{
+    "posts":[
+        {
+            "id": "next.js15-udemy-blog",
+            "title": "Next.js15 Blog",
+            "content": "Next.js15を学習中",
+            "createdAt": "2025/07/08"
+        },
+        {
+            "id": "tailwindcss-udemy-blog",
+            "title": "TailwindCSS Blog",
+            "content": "TailwindCSSを学習中",
+            "createdAt": "2025/07/09"
+        },
+        {
+            "id": "json-server-udemy-blog",
+            "title": "JSON Server Blog",
+            "content": "JSON Serverを学習中[!IMPORTANT] Viewing beta v1 documentation – usable but expect breaking changes. For stable version, see here",
+            "createdAt": "2025/07/10"
+        }
+    ]
+}
