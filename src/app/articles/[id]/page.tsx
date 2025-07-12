@@ -1,9 +1,14 @@
-import { getArticleById } from "@/blogAPI";
+import DeleteButton from "@/app/components/atom/DeleteButton";
+import { deleteArticle, getArticleById } from "@/blogAPI";
 import Image from "next/image";
 import React from "react";
 
 export default async function page({ params }: { params: { id: string } }) {
   const detailArticle = await getArticleById(params.id);
+
+  // async function handleDelete(id: string) {
+  //   console.log("削除");
+  // }
 
   return (
     <div className="max-w-3xl mx-auto p-5">
@@ -19,6 +24,7 @@ export default async function page({ params }: { params: { id: string } }) {
       <div className="text-lg leading-relaxed text-justify">
         <p>{detailArticle.content}</p>
       </div>
+      <DeleteButton id={detailArticle.id} />
     </div>
   );
 }

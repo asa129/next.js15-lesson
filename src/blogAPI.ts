@@ -58,3 +58,18 @@ export async function createArticle(
   const newArticle = await res.json();
   return newArticle;
 }
+
+export async function deleteArticle(id: string): Promise<Article> {
+  const res = await fetch(`http://localhost:3001/posts/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) {
+    throw new Error("Error fetching articles");
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const deleteArticle = await res.json();
+  return deleteArticle;
+}

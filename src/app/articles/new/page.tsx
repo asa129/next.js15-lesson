@@ -57,7 +57,9 @@ export default function CreateBlogPage() {
 
         <button
           type="submit"
-          className="py-2 px-4 border rounded-md bg-orange-300"
+          className={`py-2 px-4 border rounded-md bg-orange-300 hover:bg-orange-400 ${
+            loading ? "bg-orange-300 cursor-not-allowed" : ""
+          }`}
           disabled={loading}
         >
           投稿
