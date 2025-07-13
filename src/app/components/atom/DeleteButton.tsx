@@ -6,8 +6,10 @@ import { useRouter } from "next/navigation";
 
 export default function DeleteButton(props: { id: string }) {
   const router = useRouter();
+  const url = process.env.NEXT_PUBLIC_API_URL;
   async function handleDelete(id: string) {
-    await deleteArticle(id);
+    // await deleteArticle(id);
+    const res = await fetch(`${url}/api/${id}`, { method: "DELETE" });
     router.push("/");
     router.refresh();
   }

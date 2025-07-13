@@ -4,11 +4,15 @@ import Image from "next/image";
 import React from "react";
 
 export default async function page({ params }: { params: { id: string } }) {
-  const detailArticle = await getArticleById(params.id);
+  // const detailArticle = await getArticleById(params.id);
 
-  // async function handleDelete(id: string) {
-  //   console.log("削除");
-  // }
+  const url = process.env.NEXT_PUBLIC_API_URL;
+
+  const res = await fetch(`${url}/api/${params.id}`, {
+    next: { revalidate: 60 },
+  });
+
+  const detailArticle = await res.json();
 
   return (
     <div className="max-w-3xl mx-auto p-5">

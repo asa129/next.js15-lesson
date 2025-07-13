@@ -13,7 +13,19 @@ export default function CreateBlogPage() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    await createArticle(id, title, content);
+    // await createArticle(id, title, content);
+
+    const url = process.env.NEXT_PUBLIC_API_URL;
+
+    const res = await fetch(`${url}/api/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id, title, content }),
+    });
+
+    const detailArticle = await res.json();
 
     setLoading(false);
     router.push("/");
