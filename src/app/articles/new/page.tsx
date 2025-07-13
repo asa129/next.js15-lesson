@@ -17,7 +17,7 @@ export default function CreateBlogPage() {
 
     const url = process.env.NEXT_PUBLIC_API_URL;
 
-    const res = await fetch(`${url}/api/create`, {
+    const res = await fetch(`${url}/api`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

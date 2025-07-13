@@ -7,6 +7,7 @@ type ArticleListProps = {
 };
 
 export default function ArticleList({ articles }: ArticleListProps) {
+  console.log(articles);
   return (
     <div>
       {articles.map((article) => {
